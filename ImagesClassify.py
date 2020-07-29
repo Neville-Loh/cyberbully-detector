@@ -49,9 +49,20 @@ model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=
 # epochs determined the number of the same images show to the model
 # The order of the input might influence the parameter of the network.
 # This is done to increase the accracy of the model.
-model.fit(train_images, train_labels, epochs=10)
+model.fit(train_images, train_labels, epochs=7)
 
 
 
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print("Tested Acc: ", test_acc)
+
+
+
+
+### Using the model to make prediction.
+prediction = model.predict(test_images)
+
+## fetching the first prediction 
+print(class_names[np.argmax(prediction[0])])
+plt.imshow(test_images[0], cmap=plt.cm.binary)
+plt.show()
