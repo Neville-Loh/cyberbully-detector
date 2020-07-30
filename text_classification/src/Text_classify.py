@@ -7,7 +7,7 @@ data = keras.datasets.imdb
 
 # only take the most frequence 10k words
 # The words are represented in integer
-(train_data, train_labels), (test_data, test_labels) = data.load_data(num_words=10000)
+(train_data, train_labels), (test_data, test_labels) = data.load_data(num_words=88000)
 
 #print(train_data[0])
 
@@ -44,7 +44,7 @@ def decode_review(text):
 # MODEL
 
 model = keras.Sequential()
-model.add(keras.layers.Embedding(10000, 16))
+model.add(keras.layers.Embedding(88000, 16))
 model.add(keras.layers.GlobalAveragePooling1D())
 model.add(keras.layers.Dense(16, activation="relu"))
 model.add(keras.layers.Dense(1, activation="sigmoid"))     # configure output neuron to become sigmodial between 0, 1, indicating the movie is good or bad.
@@ -83,4 +83,7 @@ print(decode_review(test_review))
 print("Prediction: " + str(predict[0]))
 print("Actual: " + str(test_labels[0]))
 print(results)
+
+
+model.save("model")
 
