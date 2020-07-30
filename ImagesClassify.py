@@ -63,6 +63,15 @@ print("Tested Acc: ", test_acc)
 prediction = model.predict(test_images)
 
 ## fetching the first prediction 
-print(class_names[np.argmax(prediction[0])])
-plt.imshow(test_images[0], cmap=plt.cm.binary)
-plt.show()
+# print(class_names[np.argmax(prediction[0])])
+# plt.imshow(test_images[0], cmap=plt.cm.binary)
+# plt.show()
+
+
+# fetching the first 5 predictions
+for i in range(5):
+	plt.grid(False)
+	plt.imshow(test_images[i], cmap=plt.cm.binary)
+	plt.xlabel("Actual: " + class_names[test_labels[i]])
+	plt.title("Prediction " + class_names[np.argmax(prediction[i])])
+	plt.show()
