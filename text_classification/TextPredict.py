@@ -43,9 +43,9 @@ def review_encode(s):
 
 	return encoded
 
-model = keras.models.load_model("..\model.h5")
+model = keras.models.load_model(".\model.h5")
 
-with open("Test.txt", encoding="utf-8") as f:
+with open(".\\sample\\badReviewTest.txt", encoding="utf-8") as f:
 	for line in f.readlines():
 
 		# Removeing all symbols
@@ -55,9 +55,12 @@ with open("Test.txt", encoding="utf-8") as f:
 		encode = review_encode(nline)
 		encode = keras.preprocessing.sequence.pad_sequences([encode], value=word_index["<PAD>"], padding="post", maxlen=250)
 		predict = model.predict(encode)
-		print(line)
+
+		print("encoding = ")
 		print(encode)
-		print(predict[0])
+		print("\nOringal text = \n" + line + "\n")
+		#print(encode)
+		print("Result = ", predict[0])
 
 		if (predict[0][0] > 0.5):
 			print("The model thinks your review is a GOOD review")

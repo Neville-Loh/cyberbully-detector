@@ -85,5 +85,5 @@ print("Actual: " + str(test_labels[0]))
 print(results)
 
 
-model.save("model")
+model.save("model.h5")
 
