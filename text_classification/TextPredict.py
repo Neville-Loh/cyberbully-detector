@@ -1,36 +1,27 @@
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
-
-
-data = keras.datasets.imdb
-
-#(train_data, train_labels), (test_data, test_labels) = data.load_data(num_words=88000)
-
-word_index = data.get_word_index()
-
-# shift the index by 3 for each word
-# this is done to compromise data that are not in the right length
-word_index = {k:(v+3) for k, v in word_index.items()}
-word_index["<PAD>"] = 0
-word_index["<START>"] = 1
-word_index["<UNK>"] = 2
-word_index["<UNUSED>"] = 3
+import json
 
 
 
-reverse_word_index = dict([(value, key) for (key, value) in word_index.items()])
+# with open('word_index.json', 'w') as f:
+# 	json.dump(word_index, f)
+
+# with open('reverse_word_index.json', 'w') as f:
+# 	json.dump(reverse_word_index, f)
 
 
-# DATA PREPROCESS
-## Trimming the data
-#train_data = keras.preprocessing.sequence.pad_sequences(train_data, value=word_index["<PAD>"], padding="post", maxlen=250)
-#test_data = keras.preprocessing.sequence.pad_sequences(test_data, value=word_index["<PAD>"], padding="post", maxlen=250)
+with open('word_index.json') as f:
+	word_index = json.load(f)
+
+with open('reverse_word_index.json') as f:
+	reverse_word_index = json.load(f)
+
 
 def decode_review(text):
 	return " ".join([reverse_word_index.get(i, "?") for i in text])
 
-#####
 
 def review_encode(s):
 	encoded = [1]
@@ -42,6 +33,10 @@ def review_encode(s):
 			encoded.append(2)
 
 	return encoded
+
+
+#######
+
 
 model = keras.models.load_model(".\model.h5")
 
@@ -60,6 +55,7 @@ with open(".\\sample\\badReviewTest.txt", encoding="utf-8") as f:
 		print(encode)
 		print("\nOringal text = \n" + line + "\n")
 		#print(encode)
+		print("predict = \n", predict)
 		print("Result = ", predict[0])
 
 		if (predict[0][0] > 0.5):

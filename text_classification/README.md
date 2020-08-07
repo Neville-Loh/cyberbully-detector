@@ -1,8 +1,8 @@
 
 
-#Text Classification
+# Text Classification
 
-##Introduction
+## Introduction
 This is a Machine learning model built using TensorFlow and Keras. When users input
 a text file or a string for a review(games/movies). The model predict if the user
 intended for the review to be a good or bad review.
@@ -10,11 +10,11 @@ intended for the review to be a good or bad review.
 
 
 
-##Result:
+## Result:
 
 
 
-##Neural network design
+## Neural network design
 ![](./img/layer.png)
 
 The first input layer allows up to 250 words to be input. The data is padded to
@@ -36,4 +36,4 @@ close to either a good review or a bad review, avoiding ambiguity. The output is
 between 0 and 1.
 
 
-##Training the model:
+## Training the model:
