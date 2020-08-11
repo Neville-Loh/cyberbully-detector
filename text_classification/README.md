@@ -7,6 +7,8 @@ This is a Machine learning model built using TensorFlow and Keras. When users in
 a text file or a string for a review(games/movies). The model predict if the user
 intended for the review to be a good or bad review.
 
+Try it out at https://neville-loh.github.io/tf_start.html !
+
 ## Getting Started
 
 
