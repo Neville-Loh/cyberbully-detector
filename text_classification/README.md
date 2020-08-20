@@ -1,5 +1,3 @@
-
-
 # Text Classification
 
 ## Introduction
@@ -10,12 +8,22 @@ intended for the review to be a good or bad review.
 Try it out at https://neville-loh.github.io/tf_start.html !
 
 ## Getting Started
+### Online model
 To Try out the model, enter any text in the text boxes up to 250 words. The longer the description the better the result.
 The model will predict if you are giving a good or bad review. 
 
 To see the value the model predicted. Right-click and inspect the element.
 The value is logged in the browser console. A 1 means a very positive review, and a 0 means a very negative review.
+### Running the model locally
+```
+# Requires the latest pip
+pip install --upgrade pip
 
+# Current stable release for CPU and GPU
+pip install tensorflow
+
+pip install 
+```
 
 ## Result:
 
