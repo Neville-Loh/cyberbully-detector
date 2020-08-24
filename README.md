@@ -30,7 +30,7 @@ pip install numpy
 
 
 ## Neural network design
-![](./img/layer.png)
+![](./text_classification/img/layer.png)
 
 The first input layer allows up to 250 words to be input. The data is padded to
 match the input requirement if the text have less than 250 words. The input words
