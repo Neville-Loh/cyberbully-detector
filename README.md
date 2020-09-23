@@ -41,7 +41,7 @@ will be parse into a integer value that represent the words.
 
 The second layer is the embedded layer which build association in terms of word
 vector. Each word is mapped to one vector and the vector values are learned in a way that
-resembles a neural network. The batch dimension in this layer is set to 10000.
+resembles a neural network. The batch is 10000, and the dimension in this layer is set to 16.
 
 
 The third layer is use to concatenate the embedded layer into lower dimension so it
