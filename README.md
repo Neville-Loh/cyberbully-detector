@@ -20,13 +20,13 @@ The value is logged in the browser console. A 1 means a very positive review, an
 ```
 your project is a joke
 ```
-![](./text_classification/img/example1.png =800x)  
+![](./text_classification/img/example1.png)  
 The model is smart enough to tell that the text is negative when no obvious word such as this is a joke.
 Although the score is close to a neutral comment.
 ```
 your project is a joke, but in a good way
 ```
-![](./text_classification/img/example2.png =800x)  
+![](./text_classification/img/example2.png)  
 The model is smart enough to tell that user changed their opinion mid way though the sentence,
 which is very hard to do in classical natural language processing.
 
