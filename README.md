@@ -9,13 +9,26 @@ Try it out at https://www.nevilleloh.com/tf_start.html !
 
 ### Online model
 To Try out the model, enter any text in the text boxes up to 250 words. The longer the description the better the result.
-The model will predict if your text are good or bad. 
+The model will predict if your text are good or bad.
 
-A score is given from 0 to 100, 100 means your text is postive, as if the content 
+A score is given from 0 to 100, 100 means your text is postive, as if the content
 
 To see the actual value the model predicted. Right-click and inspect the element.
 The value is logged in the browser console. A 1 means a very positive review, and a 0 means a very negative review.
 
+## Result:
+```
+your project is a joke
+```
+![](./text_classification/img/example1.png =800x)  
+The model is smart enough to tell that the text is negative when no obvious word such as this is a joke.
+Although the score is close to a neutral comment.
+```
+your project is a joke, but in a good way
+```
+![](./text_classification/img/example2.png =800x)  
+The model is smart enough to tell that user changed their opinion mid way though the sentence,
+which is very hard to do in classical natural language processing.
 
 ### Running the model locally
 ```
@@ -28,12 +41,11 @@ pip install tensorflow
 pip install numpy
 ```
 
-## Result:
 
 
 
 ## Neural network design
-![](./img/layer.png)
+![](./text_classification/img/layer.png)
 
 The first input layer allows up to 250 words to be input. The data is padded to
 match the input requirement if the text have less than 250 words. The input words
