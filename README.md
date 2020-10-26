@@ -7,6 +7,8 @@ intended for the review to be a good or bad review.
 
 Try it out at https://www.nevilleloh.com/tf_start.html !
 
+![](./text_classification/img/layer.png)
+
 ### Online model
 To Try out the model, enter any text in the text boxes up to 250 words. The longer the description the better the result.
 The model will predict if your text are good or bad.
@@ -45,7 +47,6 @@ pip install numpy
 
 
 ## Neural network design
-![](./text_classification/img/layer.png)
 
 The first input layer allows up to 250 words to be input. The data is padded to
 match the input requirement if the text have less than 250 words. The input words
